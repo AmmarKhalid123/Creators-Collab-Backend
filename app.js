@@ -3,10 +3,20 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+var config = require('./config.js')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+// connecting with database //
+const mongoose = require('mongoose');
+const url = config.mongoUrl;
+const connect = mongoose.connect(url, { useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false });
 
+connect.then((db) => {
+  console.log("Connected to the server.");
+}, (err) => {
+  console.log(err);
+});
+// connected //
 var app = express();
 
 
