@@ -40,7 +40,7 @@ app.use('/users', usersRouter);
 app.use('/projects', require('./routes/projects'));
 app.use('/channels', require('./routes/channels'));
 app.use('/projectUsers', require('./routes/projectUsers'));
-
+app.use('/channelsData', require('./routes/channelData'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
