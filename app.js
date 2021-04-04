@@ -41,6 +41,7 @@ app.use('/projects', require('./routes/projects'));
 app.use('/channels', require('./routes/channels'));
 app.use('/projectUsers', require('./routes/projectUsers'));
 app.use('/channelsData', require('./routes/channelData'));
+app.use('/imgUpload', require('./routes/imageUpload'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
