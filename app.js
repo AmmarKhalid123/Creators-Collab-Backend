@@ -43,6 +43,7 @@ app.use('/projectUsers', require('./routes/projectUsers'));
 app.use('/channelsData', require('./routes/channelData'));
 app.use('/imgUpload', require('./routes/imageUpload'));
 app.use('/invites', require('./routes/invitations'));
+app.use('/notifications', require('./routes/notifications'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
