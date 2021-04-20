@@ -23,6 +23,9 @@ channelRouter
             if (project){
                 Channel.find({pid: req.params.pid})
                 .then((channel) => {
+                    console.log("project", project);
+                    console.log("channel", channel);
+                    console.log("-------");
                     res.statusCode = 200;
                     res.setHeader('Content-Type', 'application/json');
                     res.json({channel});
