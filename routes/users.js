@@ -106,4 +106,18 @@ router.post('/login', cors.corsWithOptions, (req, res, next) => {
 		})
 });
 
+router.put('/', cors.corsWithOptions, authenticate.verifyUser, (req, res, next) => {
+	User.findById(req.user._id)
+		.then(user => {
+			user.username = req.body.name;
+			user.save((err, usr) => {
+				var userInfo = { username: usr.username, id: usr._id, email: usr.email, createdAt: usr.createdAt, updatedAt: usr.updatedAt, image: usr.image,};
+				res.statusCode = 200;
+				res.setHeader('Content-Type', 'application/json');
+				res.json({ success: true, user: userInfo });
+			})
+		})
+})
+
+
 module.exports = router;

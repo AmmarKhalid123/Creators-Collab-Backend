@@ -44,7 +44,7 @@ app.use('/channelsData', require('./routes/channelData'));
 app.use('/imgUpload', require('./routes/imageUpload'));
 app.use('/invites', require('./routes/invitations'));
 app.use('/notifications', require('./routes/notifications'));
-
+app.use('/profilePicUpload', require('./routes/profilePicUpload'));
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
